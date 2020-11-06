@@ -166,10 +166,32 @@
 	-소스의 정렬을 위해 태그사이에 불필요한 줄바꿈이나 공백을 주게되면
 		그대로 적용되므로 주의해야 한다.
 	 -->
+	 
+	 <script>
+	 function textArea(){
+		 /*  
+		 textarea는 value속성이 없으나 javascript에서 접근할 때는 
+		 value속성을 통해 값을 가져오거나 변경할 수 있다.
+		 */
+		 document.getElementById("intro").value = "내용을 바꿉니다.";
+		 var v = document.getElementById("intro").value;
+		 alert(v);
+	 }
+	 </script>
 	<h3>textarea태그</h3>
 
-	<textarea name="intor" cols="70" rows="5">내용은 여기에 입력됩니다.</textarea>
+	<textarea name="intor" id="into" cols="70" rows="5">내용은 여기에 입력됩니다.</textarea>
+	<input type="button" onclick="textArea();" value="난버튼" />
 
+	<!-- 
+		onclick은 클릭이벤트를 감지하는 '이벤트핸들러' 혹은 '이벤트리스너'
+		라고 한다. 즉, 해당 버튼을 클릭했을대 textArea() 함수를 호출한다.
+	 -->
+
+	<!-- 
+		-웹브라우저에서는 보이지 않으나 서버로 전송이 필요한 경우 사용한다.
+		-주로 회원정보 수정이나 게시글 수정에 사용된다.
+	 -->
 	<h3>type="hidden"</h3>
 	<form action="">
 		<input type="hidden" name="member_id" value="kosmo" /> <input
